@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Quote Generator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+    .card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      max-width: 400px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #555;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background: #4CAF50;
+      color: #fff;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Quote of the Day</h2>
+    <p id="quote">Click the button to get inspired!</p>
+    <button onclick="newQuote()">New Quote</button>
+  </div>
+
+  <script>
+    const quotes = [
+      "Believe you can and you're halfway there.",
+      "Don't watch the clock; do what it does. Keep going.",
+      "Dream big and dare to fail.",
+      "Do something today that your future self will thank you for.",
+      "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+      "Happiness is not by chance, but by choice."
+    ];
+
+    function newQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById('quote').textContent = quotes[randomIndex];
+    }
+  </script>
+</body>
+</html>
